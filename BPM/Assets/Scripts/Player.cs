@@ -11,11 +11,11 @@ public class Player : MonoBehaviour {
     {
         if (tag.Equals("Player1"))
         {
-            position = new Vector3(-0.4375f, 0.4375f, 0.0f);
+            position = new Vector3(-3.5f, 3.5f, 0.0f);
         }
         else
         {
-            position = new Vector3(0.4375f, -0.4375f, 0.0f);
+            position = new Vector3(3.5f, -3.5f, 0.0f);
         }
 	}
 	
