@@ -53,6 +53,7 @@ public class GridManager : MonoBehaviour {
         // Player 1's controls
         if (Input.GetKeyDown("w")) // Up
         {
+            player1.GetComponent<Player>().direction = new Vector3(0.0f, 1.0f, 0.0f);
             p1Y--;
             CheckWallBump();
             player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
@@ -60,6 +61,7 @@ public class GridManager : MonoBehaviour {
         
         if (Input.GetKeyDown("s")) // Down
         {
+            player1.GetComponent<Player>().direction = new Vector3(0.0f, -1.0f, 0.0f);
             p1Y++;
             CheckWallBump();
             player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
@@ -67,6 +69,7 @@ public class GridManager : MonoBehaviour {
         
         if (Input.GetKeyDown("a")) // Left
         {
+            player1.GetComponent<Player>().direction = new Vector3(-1.0f, 0.0f, 0.0f);
             p1X--;
             CheckWallBump();
             player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
@@ -74,6 +77,7 @@ public class GridManager : MonoBehaviour {
 
         if (Input.GetKeyDown("d")) // Right
         {
+            player1.GetComponent<Player>().direction = new Vector3(1.0f, 0.0f, 0.0f);
             p1X++;
             CheckWallBump();
             player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
@@ -82,6 +86,7 @@ public class GridManager : MonoBehaviour {
         // Player 2's controls
         if (Input.GetKeyDown("up")) // Up
         {
+            player2.GetComponent<Player>().direction = new Vector3(0.0f, 1.0f, 0.0f);
             p2Y--;
             CheckWallBump();
             player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];
@@ -89,6 +94,7 @@ public class GridManager : MonoBehaviour {
 
         if (Input.GetKeyDown("down")) // Down
         {
+            player2.GetComponent<Player>().direction = new Vector3(0.0f, -1.0f, 0.0f);
             p2Y++;
             CheckWallBump();
             player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];
@@ -96,6 +102,7 @@ public class GridManager : MonoBehaviour {
 
         if (Input.GetKeyDown("left")) // Left
         {
+            player2.GetComponent<Player>().direction = new Vector3(-1.0f, 0.0f, 0.0f);
             p2X--;
             CheckWallBump();
             player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];
@@ -103,6 +110,7 @@ public class GridManager : MonoBehaviour {
 
         if (Input.GetKeyDown("right")) // Right
         {
+            player2.GetComponent<Player>().direction = new Vector3(1.0f, 0.0f, 0.0f);
             p2X++;
             CheckWallBump();
             player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];
@@ -150,6 +158,54 @@ public class GridManager : MonoBehaviour {
         else if (p2Y < 0)
         {
             p2Y = 1;
+        }
+
+        // Check to see if the players are colliding
+        if(p1X == p2X && p1Y == p2Y)
+        {
+            if(player1.GetComponent<Player>().direction.x > 0)
+            {
+                p1X -= 2;
+                p2X += 2;
+            }
+            else if(player1.GetComponent<Player>().direction.x < 0)
+            {
+                p1X += 2;
+                p2X -= 2;
+            }
+
+            if (player1.GetComponent<Player>().direction.y > 0)
+            {
+                p1Y -= 2;
+                p2Y += 2;
+            }
+            else if (player1.GetComponent<Player>().direction.y < 0)
+            {
+                p1Y += 2;
+                p2Y -= 2;
+            }
+
+            if (player2.GetComponent<Player>().direction.x > 0)
+            {
+                p1X -= 2;
+                p2X += 2;
+            }
+            else if (player2.GetComponent<Player>().direction.x < 0)
+            {
+                p1X += 2;
+                p2X -= 2;
+            }
+
+            if (player2.GetComponent<Player>().direction.y > 0)
+            {
+                p1Y -= 2;
+                p2Y += 2;
+            }
+            else if (player2.GetComponent<Player>().direction.y < 0)
+            {
+                p1Y += 2;
+                p2Y -= 2;
+            }
         }
     }
 }
