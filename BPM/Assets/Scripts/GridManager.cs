@@ -6,6 +6,7 @@ public class GridManager : MonoBehaviour {
 
     public GameObject player1;
     public GameObject player2;
+    public new GameObject audio;
 
     // X and Y values of both players' positions on the grid
     private int p1X; 
@@ -27,10 +28,11 @@ public class GridManager : MonoBehaviour {
                 gridSpace[i,j] = new Vector3(-3.5f + j, 3.5f - i, 0.0f);
             }
         }
-
         // Establish starting positions for the players
         player1.GetComponent<Player>().position = gridSpace[0, 0];
+        player1.GetComponent<Player>().direction = Player.Direction.Right;
         player2.GetComponent<Player>().position = gridSpace[7, 7];
+        player2.GetComponent<Player>().direction = Player.Direction.Left;
         p1X = 0;
         p1Y = 0;
         p2X = 7;
@@ -41,79 +43,97 @@ public class GridManager : MonoBehaviour {
 	void Update ()
     {
         ProcessInput();
+        CheckDownbeat();
 	}
 
     /// <summary>
     /// Processes both player1's and player2's input.
+    /// Adjusted to include player input and direction enums. 
+    /// Processes inputs and stores them in action queue.
     /// </summary>
     void ProcessInput()
     {
         
-
         // Player 1's controls
         if (Input.GetKeyDown("w")) // Up
         {
-            player1.GetComponent<Player>().direction = new Vector3(0.0f, 1.0f, 0.0f);
+            player1.GetComponent<Player>().queuedAction = Player.Input.Move;
+            player1.GetComponent<Player>().direction = Player.Direction.Up;
+            /*player1.GetComponent<Player>().direction = new Vector3(0.0f, 1.0f, 0.0f);
             p1Y--;
             CheckWallBump();
-            player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
+            player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];*/
         }
         
         if (Input.GetKeyDown("s")) // Down
         {
-            player1.GetComponent<Player>().direction = new Vector3(0.0f, -1.0f, 0.0f);
+            player1.GetComponent<Player>().queuedAction = Player.Input.Move;
+            player1.GetComponent<Player>().direction = Player.Direction.Down;
+            /*player1.GetComponent<Player>().direction = new Vector3(0.0f, -1.0f, 0.0f);
             p1Y++;
             CheckWallBump();
-            player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
+            player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];*/
         }
         
         if (Input.GetKeyDown("a")) // Left
         {
-            player1.GetComponent<Player>().direction = new Vector3(-1.0f, 0.0f, 0.0f);
+            player1.GetComponent<Player>().queuedAction = Player.Input.Move;
+            player1.GetComponent<Player>().direction = Player.Direction.Left;
+            /*player1.GetComponent<Player>().direction = new Vector3(-1.0f, 0.0f, 0.0f);
             p1X--;
             CheckWallBump();
-            player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
+            player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];*/
         }
 
         if (Input.GetKeyDown("d")) // Right
         {
-            player1.GetComponent<Player>().direction = new Vector3(1.0f, 0.0f, 0.0f);
+            player1.GetComponent<Player>().queuedAction = Player.Input.Move;
+            player1.GetComponent<Player>().direction = Player.Direction.Right;
+            /*player1.GetComponent<Player>().direction = new Vector3(1.0f, 0.0f, 0.0f);
             p1X++;
             CheckWallBump();
-            player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
+            player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];*/
         }
 
         // Player 2's controls
         if (Input.GetKeyDown("up")) // Up
         {
-            player2.GetComponent<Player>().direction = new Vector3(0.0f, 1.0f, 0.0f);
+            player2.GetComponent<Player>().queuedAction = Player.Input.Move;
+            player2.GetComponent<Player>().direction = Player.Direction.Up;
+            /*player2.GetComponent<Player>().direction = new Vector3(0.0f, 1.0f, 0.0f);
             p2Y--;
             CheckWallBump();
-            player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];
+            player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];*/
         }
 
         if (Input.GetKeyDown("down")) // Down
         {
-            player2.GetComponent<Player>().direction = new Vector3(0.0f, -1.0f, 0.0f);
+            player2.GetComponent<Player>().queuedAction = Player.Input.Move;
+            player2.GetComponent<Player>().direction = Player.Direction.Down;
+            /*player2.GetComponent<Player>().direction = new Vector3(0.0f, -1.0f, 0.0f);
             p2Y++;
             CheckWallBump();
-            player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];
+            player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];*/
         }
 
         if (Input.GetKeyDown("left")) // Left
         {
-            player2.GetComponent<Player>().direction = new Vector3(-1.0f, 0.0f, 0.0f);
+            player2.GetComponent<Player>().queuedAction = Player.Input.Move;
+            player2.GetComponent<Player>().direction = Player.Direction.Left;
+            /*player2.GetComponent<Player>().direction = new Vector3(-1.0f, 0.0f, 0.0f);
             p2X--;
             CheckWallBump();
-            player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];
+            player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];*/
         }
 
         if (Input.GetKeyDown("right")) // Right
         {
-            player2.GetComponent<Player>().direction = new Vector3(1.0f, 0.0f, 0.0f);
+            player2.GetComponent<Player>().queuedAction = Player.Input.Move;
+            player2.GetComponent<Player>().direction = Player.Direction.Right;
+            /*player2.GetComponent<Player>().direction = new Vector3(1.0f, 0.0f, 0.0f);
             p2X++;
             CheckWallBump();
-            player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];
+            player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];*/
         }
     }
 
@@ -161,8 +181,51 @@ public class GridManager : MonoBehaviour {
         }
 
         // Check to see if the players are colliding
-        if(p1X == p2X && p1Y == p2Y)
+        if (p1X == p2X && p1Y == p2Y)
         {
+            if (player1.GetComponent<Player>().direction == Player.Direction.Right)
+            {
+                p1X -= 2;
+                p2X += 2;
+            }
+            else if (player1.GetComponent<Player>().direction == Player.Direction.Left)
+            {
+                p1X += 2;
+                p2X -= 2;
+            }
+
+            if (player1.GetComponent<Player>().direction == Player.Direction.Up)
+            {
+                p1Y -= 2;
+                p2Y += 2;
+            }
+            else if (player1.GetComponent<Player>().direction == Player.Direction.Down)
+            {
+                p1Y += 2;
+                p2Y -= 2;
+            }
+
+            if (player2.GetComponent<Player>().direction == Player.Direction.Right)
+            {
+                p1X -= 2;
+                p2X += 2;
+            }
+            else if (player2.GetComponent<Player>().direction == Player.Direction.Left)
+            {
+                p1X += 2;
+                p2X -= 2;
+            }
+
+            if (player2.GetComponent<Player>().direction == Player.Direction.Up)
+            {
+                p1Y -= 2;
+                p2Y += 2;
+            }
+            else if (player2.GetComponent<Player>().direction == Player.Direction.Down)
+            {
+                p1Y += 2;
+                p2Y -= 2;
+            /*
             if(player1.GetComponent<Player>().direction.x > 0)
             {
                 p1X -= 2;
@@ -205,6 +268,69 @@ public class GridManager : MonoBehaviour {
             {
                 p1Y += 2;
                 p2Y -= 2;
+            }*/
+            }
+        }
+    }
+
+    /// <summary>
+    /// Checks audio manager for the beat. If it is the downbeat, performed the player's queued actions.
+    /// </summary>
+    void CheckDownbeat()
+    {
+        if (audio.GetComponent<AudioManager>().downbeat)
+        {
+            if (player1.GetComponent<Player>().queuedAction != Player.Input.Nothing)
+            {
+                if (player1.GetComponent<Player>().queuedAction == Player.Input.Move)
+                {
+                    if (player1.GetComponent<Player>().direction == Player.Direction.Up)
+                    {
+                        p1Y--;
+
+                    }
+                    else if (player1.GetComponent<Player>().direction == Player.Direction.Down)
+                    {
+                        p1Y++;
+                    }
+                    else if (player1.GetComponent<Player>().direction == Player.Direction.Left)
+                    {
+                        p1X--;
+                    }
+                    else if (player1.GetComponent<Player>().direction == Player.Direction.Right)
+                    {
+                        p1X++;
+                    }
+                    CheckWallBump();
+                    player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
+                    player1.GetComponent<Player>().queuedAction = Player.Input.Nothing;
+                }
+            }
+            if (player2.GetComponent<Player>().queuedAction != Player.Input.Nothing)
+            {
+                if (player2.GetComponent<Player>().queuedAction == Player.Input.Move)
+                {
+                    if (player2.GetComponent<Player>().direction == Player.Direction.Up)
+                    {
+                        p2Y--;
+
+                    }
+                    else if (player2.GetComponent<Player>().direction == Player.Direction.Down)
+                    {
+                        p2Y++;
+                    }
+                    else if (player2.GetComponent<Player>().direction == Player.Direction.Left)
+                    {
+                        p2X--;
+                    }
+                    else if (player2.GetComponent<Player>().direction == Player.Direction.Right)
+                    {
+                        p2X++;
+                    }
+                    CheckWallBump();
+                    player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];
+                    player2.GetComponent<Player>().queuedAction = Player.Input.Nothing;
+                }
             }
         }
     }
