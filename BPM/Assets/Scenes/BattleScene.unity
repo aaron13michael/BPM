@@ -212,7 +212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player1: {fileID: 1734128836}
   player2: {fileID: 1567902283}
-  audioManager: {fileID: 358434170}
+  audio: {fileID: 358434170}
 --- !u!1 &358434170
 GameObject:
   m_ObjectHideFlags: 0
@@ -336,6 +336,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   source: {fileID: 358434171}
   bpm: 100
+  downbeat: 0
 --- !u!1 &1567902283
 GameObject:
   m_ObjectHideFlags: 0
@@ -422,9 +423,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
-  direction: {x: 0, y: 0, z: 0}
-  QueuedAction: 0
-  d: 0
+  queuedAction: 0
+  direction: 0
 --- !u!1 &1734128836
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,9 +511,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
-  direction: {x: 0, y: 0, z: 0}
-  QueuedAction: 0
-  d: 0
+  queuedAction: 0
+  direction: 0
 --- !u!1 &1948247280
 GameObject:
   m_ObjectHideFlags: 0
