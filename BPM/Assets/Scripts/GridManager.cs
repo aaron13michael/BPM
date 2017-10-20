@@ -28,29 +28,43 @@ public class GridManager : MonoBehaviour {
             }
         }
 
-        // Establish starting positions for the players
-        player1.GetComponent<Player>().position = gridSpace[0, 0];
-        player2.GetComponent<Player>().position = gridSpace[7, 7];
-        p1X = 0;
-        p1Y = 0;
-        p2X = 7;
-        p2Y = 7;
+        // Setup game for first round
+        ResetRound();
     }
 	
 	// Update is called once per frame
 	void Update ()
     {
         ProcessInput();
+        if (player1.GetComponent<Player>().dead || player2.GetComponent<Player>().dead)
+        {
+            ResetRound();
+            // Temporary score board
+            Debug.Log("Current Score: ");
+            Debug.Log("Player 1: " + player1.GetComponent<Player>().score.ToString());
+            Debug.Log("Player 2: " + player2.GetComponent<Player>().score.ToString());
+        }
 	}
 
     /// <summary>
     /// Processes both player1's and player2's input.
     /// </summary>
+    /// 
     void ProcessInput()
     {
-        
-
         // Player 1's controls
+        PlayerOneInput();
+
+        // Player 2's controls
+        PlayerTwoInput();
+    }
+
+    /// <summary>
+    /// Processes both player1's input.
+    /// </summary>
+    /// 
+    void PlayerOneInput()
+    {
         if (Input.GetKeyDown("w")) // Up
         {
             player1.GetComponent<Player>().direction = new Vector3(0.0f, 1.0f, 0.0f);
@@ -58,7 +72,7 @@ public class GridManager : MonoBehaviour {
             CheckWallBump();
             player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
         }
-        
+
         if (Input.GetKeyDown("s")) // Down
         {
             player1.GetComponent<Player>().direction = new Vector3(0.0f, -1.0f, 0.0f);
@@ -66,7 +80,7 @@ public class GridManager : MonoBehaviour {
             CheckWallBump();
             player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
         }
-        
+
         if (Input.GetKeyDown("a")) // Left
         {
             player1.GetComponent<Player>().direction = new Vector3(-1.0f, 0.0f, 0.0f);
@@ -82,8 +96,18 @@ public class GridManager : MonoBehaviour {
             CheckWallBump();
             player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
         }
+        if (Input.GetKeyDown(KeyCode.LeftShift)) //Space Bar -> attack button
+        {
+            ProcessAttack(player1, player2);
+        }
+    }
 
-        // Player 2's controls
+    /// <summary>
+    /// Processes both player2's input.
+    /// </summary>
+    /// 
+    void PlayerTwoInput()
+    {
         if (Input.GetKeyDown("up")) // Up
         {
             player2.GetComponent<Player>().direction = new Vector3(0.0f, 1.0f, 0.0f);
@@ -115,6 +139,49 @@ public class GridManager : MonoBehaviour {
             CheckWallBump();
             player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];
         }
+        if (Input.GetKeyDown(KeyCode.RightShift))
+        {
+            ProcessAttack(player2, player1);
+        }
+    }
+
+    /// <summary>
+    /// Process an attack action between two given player components.
+    /// Increments score of attacker if attack hits target
+    /// </summary>
+    /// 
+    void ProcessAttack(GameObject attacker, GameObject target)
+    {
+        Vector3[] attackedPositions = attacker.GetComponent<Player>().attack();
+        foreach (Vector3 v in attackedPositions)
+        {
+            if (v.Equals(target.GetComponent<Player>().position))
+            {
+                target.GetComponent<Player>().dead = true;
+                attacker.GetComponent<Player>().score++;
+                break; // no need to continue this loop
+            }
+        }
+        
+    }
+
+    /// <summary>
+    /// Sets players back to starting positions alive for next round.
+    /// Called to begin a set.
+    /// </summary>
+    void ResetRound()
+    {
+        // Establish starting positions for the players
+        player1.GetComponent<Player>().position = gridSpace[0, 0];
+        player2.GetComponent<Player>().position = gridSpace[7, 7];
+        p1X = 0;
+        p1Y = 0;
+        p2X = 7;
+        p2Y = 7;
+
+        // Set both players to alive
+        player1.GetComponent<Player>().dead = false;
+        player2.GetComponent<Player>().dead = false;
     }
 
     /// <summary>
