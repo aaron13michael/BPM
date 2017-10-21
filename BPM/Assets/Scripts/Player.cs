@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
     public Direction direction;
     protected Dictionary<Direction, Vector3> directionVectors;
     // Use this for initialization
-    void Start ()
+    protected void Start ()
     {
         // initialize direction vectors
         directionVectors = new Dictionary<Direction, Vector3>();
@@ -45,7 +45,7 @@ public class Player : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
+	protected void Update ()
     {
         transform.position = position;
         if (dead) this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
