@@ -347,6 +347,7 @@ GameObject:
   - component: {fileID: 1567902285}
   - component: {fileID: 1567902284}
   - component: {fileID: 1567902286}
+  - component: {fileID: 1567902287}
   m_Layer: 0
   m_Name: circle_player
   m_TagString: Player2
@@ -419,12 +420,34 @@ MonoBehaviour:
   m_GameObject: {fileID: 1567902283}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5371f10d963577c4f8edd03db715ecc2, type: 3}
+  m_Script: {fileID: 11500000, guid: de10be80b328f4741af2a72062e2feef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
+  dead: 0
+  score: 0
   queuedAction: 0
   direction: 0
+  Class: 0
+--- !u!114 &1567902287
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1567902283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e9c7e7847579a141abbe4ede8b49ece, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  position: {x: 0, y: 0, z: 0}
+  dead: 0
+  score: 0
+  maxAttacks: 0
+  canAct: 0
+  queuedAction: 0
+  direction: 0
+  Class: 0
 --- !u!1 &1734128836
 GameObject:
   m_ObjectHideFlags: 0
@@ -507,12 +530,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1734128836}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5371f10d963577c4f8edd03db715ecc2, type: 3}
+  m_Script: {fileID: 11500000, guid: de10be80b328f4741af2a72062e2feef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   position: {x: 0, y: 0, z: 0}
+  dead: 0
+  score: 0
   queuedAction: 0
   direction: 0
+  Class: 0
 --- !u!1 &1948247280
 GameObject:
   m_ObjectHideFlags: 0

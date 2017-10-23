@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
     public Vector3 position; // current position of the player
     public bool dead; // true if player has been attacked and killed, false otherwise
@@ -18,8 +19,11 @@ public class Player : MonoBehaviour {
     public enum Direction { Up, Down, Left, Right };
     public Direction direction;
     protected Dictionary<Direction, Vector3> directionVectors;
+
+    public enum PlayerClass {Sword, Laser};
+    public PlayerClass Class;
     // Use this for initialization
-    protected void Start ()
+    protected void Start()
     {
         // initialize direction vectors
         directionVectors = new Dictionary<Direction, Vector3>();
@@ -33,28 +37,56 @@ public class Player : MonoBehaviour {
         {
             position = new Vector3(-3.5f, 3.5f, 0.0f);
             direction = Direction.Right;
+            Class = PlayerClass.Laser;
+            maxAttacks = 5;
         }
         else
         {
             position = new Vector3(3.5f, -3.5f, 0.0f);
             direction = Direction.Left;
+            Class = PlayerClass.Sword;
+            maxAttacks = 3;
         }
         dead = false;
-        maxAttacks = 1;
         score = 0;
-	}
-	
-	// Update is called once per frame
-	protected void Update ()
+    }
+
+    // Update is called once per frame
+    protected void Update()
     {
         transform.position = position;
         if (dead) this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
-	}
+    }
 
-    public virtual Vector3[] attack()
+    public Vector3[] attack()
     {
         Vector3[] attackedSpaces = new Vector3[maxAttacks];
         attackedSpaces[0] = position + directionVectors[direction];
+        if (Class == PlayerClass.Sword)
+        {
+            //Center Square
+            attackedSpaces[0] = position + directionVectors[direction];
+            if (direction == Direction.Up || direction == Direction.Down)
+            {
+                //Side Squares Vertical
+                attackedSpaces[1] = attackedSpaces[0] + directionVectors[Direction.Left];
+                attackedSpaces[2] = attackedSpaces[0] + directionVectors[Direction.Right];
+            }
+            else if (direction == Direction.Left || direction == Direction.Right)
+            {
+                //Side Square Horizontal
+                attackedSpaces[1] = attackedSpaces[0] + directionVectors[Direction.Up];
+                attackedSpaces[2] = attackedSpaces[0] + directionVectors[Direction.Down];
+            }
+        }
+        else if(Class == PlayerClass.Laser)
+        {
+            // Shoot 5 squares in a straight line
+            for(int i = 1; i <= 4; i++)
+            {
+                attackedSpaces[i] = attackedSpaces[0] + (directionVectors[direction] * i);
+            }
+        }
         return attackedSpaces;
     }
 }
