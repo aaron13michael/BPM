@@ -2,29 +2,91 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour {
+public class Player : MonoBehaviour
+{
 
     public Vector3 position; // current position of the player
-    public Vector3 direction; // current direction player is facing (+/- X is right/left, +/- Y is up/down)
+    public bool dead; // true if player has been attacked and killed, false otherwise
+    public int score;
 
-	// Use this for initialization
-	void Start ()
+    protected int maxAttacks; // maximum number of squares player can attack with one attack
+
+    protected bool canAct;
+
+    public enum Input { Move, Attack, Nothing };
+    public Input queuedAction;
+
+    public enum Direction { Up, Down, Left, Right };
+    public Direction direction;
+    protected Dictionary<Direction, Vector3> directionVectors;
+
+    public enum PlayerClass {Sword, Laser};
+    public PlayerClass Class;
+    // Use this for initialization
+    protected void Start()
     {
+        // initialize direction vectors
+        directionVectors = new Dictionary<Direction, Vector3>();
+        directionVectors.Add(Direction.Up, new Vector3(0.0f, 1.0f, 0.0f));
+        directionVectors.Add(Direction.Down, new Vector3(0.0f, -1.0f, 0.0f));
+        directionVectors.Add(Direction.Left, new Vector3(-1.0f, 0.0f, 0.0f));
+        directionVectors.Add(Direction.Right, new Vector3(1.0f, 0.0f, 0.0f));
+
+        canAct = false;
         if (tag.Equals("Player1"))
         {
             position = new Vector3(-3.5f, 3.5f, 0.0f);
-            direction = new Vector3(1.0f, 0.0f, 0.0f);
+            direction = Direction.Right;
+            Class = PlayerClass.Laser;
+            maxAttacks = 5;
         }
         else
         {
             position = new Vector3(3.5f, -3.5f, 0.0f);
-            direction = new Vector3(-1.0f, 0.0f, 0.0f);
+            direction = Direction.Left;
+            Class = PlayerClass.Sword;
+            maxAttacks = 3;
         }
-	}
-	
-	// Update is called once per frame
-	void Update ()
+        dead = false;
+        score = 0;
+    }
+
+    // Update is called once per frame
+    protected void Update()
     {
         transform.position = position;
-	}
+        if (dead) this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+    }
+
+    public Vector3[] attack()
+    {
+        Vector3[] attackedSpaces = new Vector3[maxAttacks];
+        attackedSpaces[0] = position + directionVectors[direction];
+        if (Class == PlayerClass.Sword)
+        {
+            //Center Square
+            attackedSpaces[0] = position + directionVectors[direction];
+            if (direction == Direction.Up || direction == Direction.Down)
+            {
+                //Side Squares Vertical
+                attackedSpaces[1] = attackedSpaces[0] + directionVectors[Direction.Left];
+                attackedSpaces[2] = attackedSpaces[0] + directionVectors[Direction.Right];
+            }
+            else if (direction == Direction.Left || direction == Direction.Right)
+            {
+                //Side Square Horizontal
+                attackedSpaces[1] = attackedSpaces[0] + directionVectors[Direction.Up];
+                attackedSpaces[2] = attackedSpaces[0] + directionVectors[Direction.Down];
+            }
+        }
+        else if(Class == PlayerClass.Laser)
+        {
+            // Shoot 5 squares in a straight line
+            for(int i = 1; i <= 4; i++)
+            {
+                attackedSpaces[i] = attackedSpaces[0] + (directionVectors[direction] * i);
+            }
+        }
+        return attackedSpaces;
+    }
 }
