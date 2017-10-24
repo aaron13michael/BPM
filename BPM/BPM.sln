@@ -1,7 +1,7 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2017
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPM", "BPM.csproj", "{46A516EC-C632-8731-87E3-F25ECD4DFF38}"
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BPM", "Assembly-CSharp.csproj", "{E51FFD0A-BAD5-0C0A-7FF1-7B1866318352}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,12 +9,15 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{46A516EC-C632-8731-87E3-F25ECD4DFF38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46A516EC-C632-8731-87E3-F25ECD4DFF38}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46A516EC-C632-8731-87E3-F25ECD4DFF38}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46A516EC-C632-8731-87E3-F25ECD4DFF38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E51FFD0A-BAD5-0C0A-7FF1-7B1866318352}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E51FFD0A-BAD5-0C0A-7FF1-7B1866318352}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E51FFD0A-BAD5-0C0A-7FF1-7B1866318352}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E51FFD0A-BAD5-0C0A-7FF1-7B1866318352}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
 	EndGlobalSection
 EndGlobal
