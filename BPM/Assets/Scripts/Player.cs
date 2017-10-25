@@ -22,6 +22,10 @@ public class Player : MonoBehaviour
 
     public enum PlayerClass {Sword, Laser};
     public PlayerClass Class;
+
+	public Dictionary<PlayerClass, AudioClip> attackSounds; //Holds all player class attack sounds (will be used once code is restructured for choosing player class)
+	public AudioSource playerAudio; //The AudioSource attached to this player
+
     // Use this for initialization
     protected void Start()
     {
@@ -32,12 +36,16 @@ public class Player : MonoBehaviour
         directionVectors.Add(Direction.Left, new Vector3(-1.0f, 0.0f, 0.0f));
         directionVectors.Add(Direction.Right, new Vector3(1.0f, 0.0f, 0.0f));
 
+		//Make sure player audio doesn't immediately play
+		playerAudio.playOnAwake = false;
+
         canAct = false;
         if (tag.Equals("Player1"))
         {
             position = new Vector3(-3.5f, 3.5f, 0.0f);
             direction = Direction.Right;
             Class = PlayerClass.Laser;
+			//playerAudio.clip = attackSounds[Class];
             maxAttacks = 5;
         }
         else
@@ -45,6 +53,7 @@ public class Player : MonoBehaviour
             position = new Vector3(3.5f, -3.5f, 0.0f);
             direction = Direction.Left;
             Class = PlayerClass.Sword;
+			//playerAudio.clip = attackSounds[Class];
             maxAttacks = 3;
         }
         dead = false;
@@ -60,6 +69,12 @@ public class Player : MonoBehaviour
 
     public Vector3[] attack()
     {
+		//Play attack sound if audio isn't already playing
+		if(!playerAudio.isPlaying)
+		{
+			playerAudio.Play();
+		}
+
         Vector3[] attackedSpaces = new Vector3[maxAttacks];
         attackedSpaces[0] = position + directionVectors[direction];
         if (Class == PlayerClass.Sword)
