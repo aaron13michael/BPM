@@ -79,32 +79,31 @@ public class GridManager : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.W)) // Up
         {
 
+			CheckCollisions();
             player1.GetComponent<Player>().queuedAction = Player.Input.Move;
             player1.GetComponent<Player>().direction = Player.Direction.Up;
             p1Actions.Add(KeyCode.W);
-            CheckCollisions();
         }
         if (Input.GetKeyDown(KeyCode.S)) // Down
         {
+			CheckCollisions();
             player1.GetComponent<Player>().queuedAction = Player.Input.Move;
             player1.GetComponent<Player>().direction = Player.Direction.Down;
             p1Actions.Add(KeyCode.S);
-            CheckCollisions();
         }
         if (Input.GetKeyDown(KeyCode.A)) // Left
-        {
-
+		{
+			CheckCollisions();
             player1.GetComponent<Player>().queuedAction = Player.Input.Move;
             player1.GetComponent<Player>().direction = Player.Direction.Left;
             p1Actions.Add(KeyCode.A);
-            CheckCollisions();
         }
         if (Input.GetKeyDown(KeyCode.D)) // Right
         {
+			CheckCollisions();
             player1.GetComponent<Player>().queuedAction = Player.Input.Move;
             player1.GetComponent<Player>().direction = Player.Direction.Right;
             p1Actions.Add(KeyCode.D);
-            CheckCollisions();
         }
         if (Input.GetKeyDown(KeyCode.LeftShift)) //Space Bar -> attack button
         {
@@ -119,34 +118,34 @@ public class GridManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow)) // Up
         {
+			CheckCollisions();
             player2.GetComponent<Player>().queuedAction = Player.Input.Move;
             player2.GetComponent<Player>().direction = Player.Direction.Up;
             p2Actions.Add(KeyCode.UpArrow);
-            CheckCollisions();
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow)) // Down
         {
+			CheckCollisions();
             player2.GetComponent<Player>().queuedAction = Player.Input.Move;
             player2.GetComponent<Player>().direction = Player.Direction.Down;
             p2Actions.Add(KeyCode.DownArrow);
-            CheckCollisions();
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow)) // Left
         {
+			CheckCollisions();
             player2.GetComponent<Player>().queuedAction = Player.Input.Move;
             player2.GetComponent<Player>().direction = Player.Direction.Left;
             p2Actions.Add(KeyCode.LeftArrow);
-            CheckCollisions();
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow)) // Right
         {
+			CheckCollisions();
             player2.GetComponent<Player>().queuedAction = Player.Input.Move;
             player2.GetComponent<Player>().direction = Player.Direction.Right;
             p2Actions.Add(KeyCode.RightArrow);
-            CheckCollisions();
         }
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
