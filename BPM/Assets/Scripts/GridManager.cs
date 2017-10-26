@@ -6,9 +6,11 @@ public class GridManager : MonoBehaviour
 {
 
     public GameObject player1;
+    public GameObject p1Arrow;
     public GameObject player2;
+    public GameObject p2Arrow;
     public new GameObject audio;
-
+    
     // X and Y values of both players' positions on the grid
     private int p1X;
     private int p1Y;
@@ -34,7 +36,6 @@ public class GridManager : MonoBehaviour
         }
         // Setup game for first round
         ResetRound();
-
     }
 
     // Update is called once per frame
@@ -83,6 +84,7 @@ public class GridManager : MonoBehaviour
             player1.GetComponent<Player>().queuedAction = Player.Input.Move;
             player1.GetComponent<Player>().direction = Player.Direction.Up;
             p1Actions.Add(KeyCode.W);
+            p1Arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 90.0f);
         }
         if (Input.GetKeyDown(KeyCode.S)) // Down
         {
@@ -90,6 +92,7 @@ public class GridManager : MonoBehaviour
             player1.GetComponent<Player>().queuedAction = Player.Input.Move;
             player1.GetComponent<Player>().direction = Player.Direction.Down;
             p1Actions.Add(KeyCode.S);
+            p1Arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 270.0f);
         }
         if (Input.GetKeyDown(KeyCode.A)) // Left
 		{
@@ -97,6 +100,7 @@ public class GridManager : MonoBehaviour
             player1.GetComponent<Player>().queuedAction = Player.Input.Move;
             player1.GetComponent<Player>().direction = Player.Direction.Left;
             p1Actions.Add(KeyCode.A);
+            p1Arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 180.0f);
         }
         if (Input.GetKeyDown(KeyCode.D)) // Right
         {
@@ -104,6 +108,7 @@ public class GridManager : MonoBehaviour
             player1.GetComponent<Player>().queuedAction = Player.Input.Move;
             player1.GetComponent<Player>().direction = Player.Direction.Right;
             p1Actions.Add(KeyCode.D);
+            p1Arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         }
         if (Input.GetKeyDown(KeyCode.LeftShift)) //Space Bar -> attack button
         {
@@ -122,6 +127,7 @@ public class GridManager : MonoBehaviour
             player2.GetComponent<Player>().queuedAction = Player.Input.Move;
             player2.GetComponent<Player>().direction = Player.Direction.Up;
             p2Actions.Add(KeyCode.UpArrow);
+            p2Arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 90.0f);
         }
 
         if (Input.GetKeyDown(KeyCode.DownArrow)) // Down
@@ -130,6 +136,7 @@ public class GridManager : MonoBehaviour
             player2.GetComponent<Player>().queuedAction = Player.Input.Move;
             player2.GetComponent<Player>().direction = Player.Direction.Down;
             p2Actions.Add(KeyCode.DownArrow);
+            p2Arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 270.0f);
         }
 
         if (Input.GetKeyDown(KeyCode.LeftArrow)) // Left
@@ -138,6 +145,7 @@ public class GridManager : MonoBehaviour
             player2.GetComponent<Player>().queuedAction = Player.Input.Move;
             player2.GetComponent<Player>().direction = Player.Direction.Left;
             p2Actions.Add(KeyCode.LeftArrow);
+            p2Arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 180.0f);
         }
 
         if (Input.GetKeyDown(KeyCode.RightArrow)) // Right
@@ -146,6 +154,7 @@ public class GridManager : MonoBehaviour
             player2.GetComponent<Player>().queuedAction = Player.Input.Move;
             player2.GetComponent<Player>().direction = Player.Direction.Right;
             p2Actions.Add(KeyCode.RightArrow);
+            p2Arrow.transform.rotation = Quaternion.Euler(0.0f, 0.0f, 0.0f);
         }
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
@@ -355,7 +364,8 @@ public class GridManager : MonoBehaviour
     // Draws the buttons and lables that hold information about the scene onto the screen.
     void OnGUI()
     {
-        GUI.Label(new Rect(100.0f, 215.0f, 150.0f, 25.0f), "p1 Action: " + p1Actions[p1Actions.Count - 1]);
-        GUI.Label(new Rect(800.0f, 215.0f, 150.0f, 25.0f), "p2 Action: " + p2Actions[p2Actions.Count - 1]);
+        
+        GUI.Label(new Rect((Screen.width / 2.0f) - (Screen.width / 4.0f) - 250.0f, Screen.height / 2.0f, 150.0f, 25.0f), "p1 Action: " + p1Actions[p1Actions.Count - 1]);
+        GUI.Label(new Rect((Screen.width / 2.0f) + (Screen.width / 4.0f) + 125.0f, Screen.height / 2.0f, 150.0f, 25.0f), "p2 Action: " + p2Actions[p2Actions.Count - 1]);
     }
 }
