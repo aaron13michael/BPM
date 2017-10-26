@@ -8,6 +8,9 @@ TagManager:
   - Player2
   - ShowOnPause
   - Map
+  - Easy
+  - Hard
+  - Normal
   layers:
   - Default
   - TransparentFX

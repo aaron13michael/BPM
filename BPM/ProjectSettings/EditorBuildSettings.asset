@@ -11,3 +11,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/BattleScene.unity
     guid: defd4239a257d19479e149753767b660
+  - enabled: 1
+    path: Assets/Scenes/DifficultySelect.unity
+    guid: e2962cfbd31fa004e876b8eb48baccc2

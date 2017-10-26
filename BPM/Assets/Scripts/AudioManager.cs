@@ -5,7 +5,8 @@ using UnityEngine;
 public class AudioManager : MonoBehaviour {
 
     public AudioSource source;
-    public float bpm;
+	public AudioClip[] songs;
+    //public float bpm;
 
     private float beatsPerSecond;
     private float beatTimer;
@@ -14,10 +15,21 @@ public class AudioManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-        source.Play();
-        beatsPerSecond = 60.0f / bpm;
         beatTimer = 0.0f;
-        downbeat = false;
+		downbeat = false;
+
+		if (PlayerPrefs.GetString ("Difficulty").Equals("Easy")) 
+		{
+			source.clip = songs [0];
+			beatsPerSecond = 60.0f / 80.0f;
+		} 
+		else if (PlayerPrefs.GetString ("Difficulty").Equals("Normal")) 
+		{
+			source.clip = songs [1];
+			beatsPerSecond = 60.0f / 100.0f;
+		}
+
+		source.Play();
 	}
 	
 	// Update is called once per frame
