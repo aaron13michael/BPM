@@ -997,7 +997,7 @@ RectTransform:
   m_GameObject: {fileID: 1131526438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.016891891, y: 0.016891891, z: 0.016891891}
+  m_LocalScale: {x: 0.02347418, y: 0.02347418, z: 0.02347418}
   m_Children:
   - {fileID: 402587881}
   - {fileID: 147714324}
@@ -1105,6 +1105,10 @@ MonoBehaviour:
   direction: 0
   Class: 0
   playerAudio: {fileID: 1567902287}
+  attackSquares:
+  - {fileID: 1707923810788430, guid: 27535bcc56ddf094eba4a999a5b8e467, type: 2}
+  - {fileID: 1707923810788430, guid: 27535bcc56ddf094eba4a999a5b8e467, type: 2}
+  - {fileID: 1707923810788430, guid: 27535bcc56ddf094eba4a999a5b8e467, type: 2}
 --- !u!82 &1567902287
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1352,6 +1356,7 @@ MonoBehaviour:
   direction: 0
   Class: 0
   playerAudio: {fileID: 1734128840}
+  attackSquares: []
 --- !u!82 &1734128840
 AudioSource:
   m_ObjectHideFlags: 0

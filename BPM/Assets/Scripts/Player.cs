@@ -26,6 +26,8 @@ public class Player : MonoBehaviour
 	public Dictionary<PlayerClass, AudioClip> attackSounds; //Holds all player class attack sounds (will be used once code is restructured for choosing player class)
 	public AudioSource playerAudio; //The AudioSource attached to this player
 
+    public GameObject[] attackSquares; //white blocks that show where attack is hitting, size determines number of squares attacked
+
     // Use this for initialization
     protected void Start()
     {
@@ -38,7 +40,7 @@ public class Player : MonoBehaviour
 
 		//Make sure player audio doesn't immediately play
 		playerAudio.playOnAwake = false;
-
+        maxAttacks = attackSquares.Length;
         canAct = false;
         if (tag.Equals("Player1"))
         {
@@ -46,7 +48,6 @@ public class Player : MonoBehaviour
             direction = Direction.Right;
             Class = PlayerClass.Laser;
 			//playerAudio.clip = attackSounds[Class];
-            maxAttacks = 5;
         }
         else
         {
@@ -54,7 +55,6 @@ public class Player : MonoBehaviour
             direction = Direction.Left;
             Class = PlayerClass.Sword;
 			//playerAudio.clip = attackSounds[Class];
-            maxAttacks = 3;
         }
         dead = false;
         score = 0;
@@ -65,6 +65,25 @@ public class Player : MonoBehaviour
     {
         transform.position = position;
         if (dead) this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
+    }
+    protected void RemoveAttackBlocks()
+    {
+        foreach (GameObject g in attackSquares)
+        {
+        }
+    }
+
+    protected void showAttack(Vector3[] attackedBlocks)
+    {
+        for(int i = 0; i < attackedBlocks.Length; i++)
+        {
+            // check that attack is on grid
+            if(attackedBlocks[i].x <= 3.5 && attackedBlocks[i].x >= -3.5 && attackedBlocks[i].y <= 3.5 && attackedBlocks[i].y >= -3.5)
+            {
+                GameObject instance = Instantiate(attackSquares[i], attackedBlocks[i], Quaternion.identity);
+                Destroy(instance, 0.1f);
+            }
+        }
     }
 
     public Vector3[] attack()
@@ -97,11 +116,12 @@ public class Player : MonoBehaviour
         else if(Class == PlayerClass.Laser)
         {
             // Shoot 5 squares in a straight line
-            for(int i = 1; i <= 4; i++)
+            for(int i = 1; i <= maxAttacks - 1; i++)
             {
                 attackedSpaces[i] = attackedSpaces[0] + (directionVectors[direction] * i);
             }
         }
+        showAttack(attackedSpaces);
         return attackedSpaces;
     }
 }
