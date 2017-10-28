@@ -22,6 +22,10 @@ public class GridManager : MonoBehaviour
 
     private Vector3[,] gridSpace; // Holds each location on the grid
 
+    // Animators
+    private Animator diskAnimator;
+    private Animator laserAnimator;
+
     // Use this for initialization
     void Start()
     {
@@ -34,6 +38,9 @@ public class GridManager : MonoBehaviour
                 gridSpace[i, j] = new Vector3(-3.5f + j, 3.5f - i, 0.0f);
             }
         }
+
+        diskAnimator = player1.GetComponent<Animator>();
+        laserAnimator = player2.GetComponent<Animator>();
         // Setup game for first round
         ResetRound();
     }
@@ -205,6 +212,9 @@ public class GridManager : MonoBehaviour
 
         p1Actions.Add(KeyCode.D);
         p2Actions.Add(KeyCode.RightArrow);
+
+        diskAnimator.SetTrigger("diskRightWalk");
+        laserAnimator.SetTrigger("laserLeftWalk");
     }
 
     /// <summary>
@@ -312,19 +322,22 @@ public class GridManager : MonoBehaviour
                 {
                     if (player1.GetComponent<Player>().direction == Player.Direction.Up)
                     {
+                        diskAnimator.SetTrigger("diskWalkUp");
                         p1Y--;
-
                     }
                     else if (player1.GetComponent<Player>().direction == Player.Direction.Down)
                     {
+                        diskAnimator.SetTrigger("diskWalkDown");
                         p1Y++;
                     }
                     else if (player1.GetComponent<Player>().direction == Player.Direction.Left)
                     {
+                        diskAnimator.SetTrigger("diskWalkLeft");
                         p1X--;
                     }
                     else if (player1.GetComponent<Player>().direction == Player.Direction.Right)
                     {
+                        diskAnimator.SetTrigger("diskWalkRight");
                         p1X++;
                     }
                     player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
@@ -337,19 +350,22 @@ public class GridManager : MonoBehaviour
                 {
                     if (player2.GetComponent<Player>().direction == Player.Direction.Up)
                     {
+                        laserAnimator.SetTrigger("laserUpWalk");
                         p2Y--;
-
                     }
                     else if (player2.GetComponent<Player>().direction == Player.Direction.Down)
                     {
+                        laserAnimator.SetTrigger("laserDownWalk");
                         p2Y++;
                     }
                     else if (player2.GetComponent<Player>().direction == Player.Direction.Left)
                     {
+                        laserAnimator.SetTrigger("laserLeftWalk");
                         p2X--;
                     }
                     else if (player2.GetComponent<Player>().direction == Player.Direction.Right)
                     {
+                        laserAnimator.SetTrigger("laserRightWalk");
                         p2X++;
                     }
                     player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];

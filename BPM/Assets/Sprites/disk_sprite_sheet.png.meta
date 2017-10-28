@@ -1,0 +1,645 @@
+fileFormatVersion: 2
+guid: 0fcba6d3e549039418544b27f7447a47
+timeCreated: 1509223433
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: disk_sprite_sheet_0
+    21300002: disk_sprite_sheet_1
+    21300004: disk_sprite_sheet_2
+    21300006: disk_sprite_sheet_3
+    21300008: disk_sprite_sheet_4
+    21300010: disk_sprite_sheet_5
+    21300012: disk_sprite_sheet_6
+    21300014: disk_sprite_sheet_7
+    21300016: disk_sprite_sheet_8
+    21300018: disk_sprite_sheet_9
+    21300020: disk_sprite_sheet_10
+    21300022: disk_sprite_sheet_11
+    21300024: disk_sprite_sheet_12
+    21300026: disk_sprite_sheet_13
+    21300028: disk_sprite_sheet_14
+    21300030: disk_sprite_sheet_15
+    21300032: disk_sprite_sheet_16
+    21300034: disk_sprite_sheet_17
+    21300036: disk_sprite_sheet_18
+    21300038: disk_sprite_sheet_19
+    21300040: disk_sprite_sheet_20
+    21300042: disk_sprite_sheet_21
+    21300044: disk_sprite_sheet_22
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 500
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 2
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: disk_sprite_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 323
+        y: 1778
+        width: 234
+        height: 605
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 26.515636, y: 302.5}
+        - {x: -52.43944, y: 302.5}
+        - {x: -112.05858, y: 256.5376}
+        - {x: -116.89256, y: 172.77258}
+        - {x: -116.89256, y: -131.68097}
+        - {x: -54.05077, y: -302.4327}
+        - {x: 103.85938, y: -302.4327}
+        - {x: 117, y: -181.6178}
+        - {x: 117, y: 159.88567}
+        - {x: 94.191414, y: 229.15288}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 1765
+        width: 236
+        height: 618
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -71.34474, y: 309}
+        - {x: -89.06935, y: 249.98106}
+        - {x: -118, y: 129.16615}
+        - {x: -118, y: -80.246346}
+        - {x: -45.563488, y: -308.98923}
+        - {x: 81.73143, y: -308.98923}
+        - {x: 118, y: -292.88058}
+        - {x: 118, y: 309}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 1773
+        width: 236
+        height: 603
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 94.68844, y: 230.5964}
+        - {x: 35.0693, y: 301.5}
+        - {x: -56.7764, y: 301.5}
+        - {x: -116.39554, y: 254.75938}
+        - {x: -118, y: 243.48332}
+        - {x: -118, y: -173.7308}
+        - {x: -80.94632, y: -300.98917}
+        - {x: 46.3486, y: -300.98917}
+        - {x: 49.571255, y: -289.7131}
+        - {x: 118, y: -106.07446}
+        - {x: 118, y: 34.070824}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1263
+        y: 1768
+        width: 235
+        height: 615
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -42.98147, y: 307.5}
+        - {x: -92.93264, y: 254.59204}
+        - {x: -84.876, y: 183.71396}
+        - {x: -117.10256, y: 101.55983}
+        - {x: -117.10256, y: 4.907909}
+        - {x: -89.709984, y: -88.522285}
+        - {x: -67.15139, y: -256.05228}
+        - {x: -20.422876, y: -302.76736}
+        - {x: -13.977563, y: -307.5}
+        - {x: 117.5, y: -307.5}
+        - {x: 117.5, y: 307.5}
+      - - {x: 53.69822, y: 45.179543}
+        - {x: 52.08689, y: 41.957813}
+        - {x: 56.920876, y: 37.125217}
+        - {x: 56.920876, y: 22.627428}
+        - {x: 53.69822, y: 19.405697}
+        - {x: 53.69822, y: 4.907909}
+        - {x: 55.309547, y: 4.907909}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1632
+        y: 1766
+        width: 238
+        height: 606
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -67.14549, y: 303}
+        - {x: -115.48534, y: 252.59203}
+        - {x: -118.70799, y: 226.81818}
+        - {x: -118.70799, y: -145.29172}
+        - {x: -49.42088, y: -303}
+        - {x: 56.926773, y: -303}
+        - {x: 119, y: -237.11104}
+        - {x: 119, y: 197.8226}
+        - {x: 89.153336, y: 303}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1965
+        y: 1765
+        width: 257
+        height: 617
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 58.79892, y: 308.5}
+        - {x: -23.378813, y: 308.5}
+        - {x: -92.665924, y: 263.6734}
+        - {x: -128.11514, y: 38.15226}
+        - {x: -128.11514, y: -87.49524}
+        - {x: -107.16788, y: -113.26908}
+        - {x: -33.046783, y: -308.1838}
+        - {x: 60.410248, y: -308.1838}
+        - {x: 128.5, y: -84.273506}
+        - {x: 128.5, y: 183.13014}
+        - {x: 103.91611, y: 266.89514}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 2324
+        y: 1770
+        width: 239
+        height: 605
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 85.05952, y: 292.0311}
+        - {x: 36.719673, y: 302.5}
+        - {x: -43.846733, y: 302.5}
+        - {x: -50.292046, y: 302.5}
+        - {x: -113.13384, y: 253.37033}
+        - {x: -119.5, y: 205.04436}
+        - {x: -119.5, y: -170.28726}
+        - {x: -47.06939, y: -302.37823}
+        - {x: 57.66694, y: -302.37823}
+        - {x: 119.5, y: -110.68525}
+        - {x: 119.5, y: 8.518787}
+        - {x: 101.1728, y: 79.396866}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 2627
+        y: 1765
+        width: 256
+        height: 617
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 27.927786, y: 302.33417}
+        - {x: -1.0761201, y: 308.5}
+        - {x: -25.246042, y: 308.5}
+        - {x: -112.25776, y: 273.3386}
+        - {x: -128, y: 220.18005}
+        - {x: -128, y: -135.8212}
+        - {x: -76.80854, y: -308.1838}
+        - {x: 48.87505, y: -308.1838}
+        - {x: 128, y: -121.32341}
+        - {x: 128, y: 89.69995}
+        - {x: 74.6563, y: 283.00378}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 1033
+        width: 153
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -60.67382, y: 302}
+        - {x: -76.5, y: 287.16928}
+        - {x: -76.5, y: -170.31647}
+        - {x: -55.839836, y: -302}
+        - {x: 76.5, y: -302}
+        - {x: 76.5, y: 269.44977}
+        - {x: 52.11915, y: 302}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 702
+        y: 1025
+        width: 262
+        height: 606
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -114.94334, y: 303}
+        - {x: -131, y: 220.37276}
+        - {x: -131, y: -303}
+        - {x: 131, y: -303}
+        - {x: 131, y: 236.48141}
+        - {x: 107.41994, y: 303}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 1056
+        y: 1021
+        width: 153
+        height: 605
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -52.593773, y: 302.5}
+        - {x: -55.81643, y: 302.5}
+        - {x: -76.5, y: 251.81177}
+        - {x: -76.5, y: 114.88821}
+        - {x: -23.589867, y: -302.32593}
+        - {x: 76.5, y: -302.32593}
+        - {x: 76.5, y: 288.86166}
+        - {x: 55.36521, y: 302.5}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 1298
+        y: 1024
+        width: 286
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 128.98149, y: -18.229895}
+        - {x: 77.41898, y: 302}
+        - {x: -83.71383, y: 302}
+        - {x: -143, y: 265.2824}
+        - {x: -143, y: -301.7422}
+        - {x: 112.8682, y: -301.7422}
+        - {x: 143, y: -264.6923}
+        - {x: 143, y: -187.37076}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 1719
+        y: 1025
+        width: 154
+        height: 606
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 77, y: 49.621025}
+        - {x: 77, y: 273.5313}
+        - {x: 58.526302, y: 300.91602}
+        - {x: 48.858334, y: 303}
+        - {x: -42.98737, y: 303}
+        - {x: -76.825264, y: 270.30957}
+        - {x: -76.825264, y: -303}
+        - {x: 13.409114, y: -303}
+        - {x: 23.077082, y: -291.88245}
+        - {x: 34.35638, y: -240.33475}
+        - {x: 66.58294, y: -48.64176}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1971
+        y: 1014
+        width: 261
+        height: 604
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -26.241123, y: 302}
+        - {x: -66.52433, y: 218.23254}
+        - {x: -127.75479, y: 12.041769}
+        - {x: -130.5, y: -8.899481}
+        - {x: -130.5, y: -302}
+        - {x: 130.5, y: -302}
+        - {x: 130.5, y: 292.33234}
+        - {x: 128.44638, y: 302}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 2308
+        y: 1033
+        width: 153
+        height: 606
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -55.818398, y: 303}
+        - {x: -76.5, y: 283.14212}
+        - {x: -76.5, y: -303}
+        - {x: 50.52926, y: -303}
+        - {x: 76.5, y: -93.80036}
+        - {x: 76.5, y: 302.4725}
+        - {x: 74.69918, y: 303}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 2498
+        y: 1016
+        width: 286
+        height: 605
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -96.238304, y: 302.5}
+        - {x: -142.96681, y: -70.52865}
+        - {x: -142.96681, y: -302.49326}
+        - {x: 143, y: -302.49326}
+        - {x: 143, y: 302.5}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 202
+        width: 213
+        height: 626
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 106.5, y: -305.42258}
+        - {x: 106.5, y: 243.8825}
+        - {x: 38.42677, y: 313}
+        - {x: -98.536125, y: 313}
+        - {x: -106.5, y: 309.92798}
+        - {x: -106.5, y: -313}
+        - {x: -9.913075, y: -313}
+        - {x: -5.079091, y: -263.5401}
+        - {x: 25.536142, y: -305.42258}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 691
+        y: 627
+        width: 165
+        height: 179
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -82.43752, y: 89.5}
+        - {x: -82.43752, y: 6.8168297}
+        - {x: -63.10158, y: -59.22865}
+        - {x: 6.1855273, y: -89.5}
+        - {x: 81.917946, y: -89.5}
+        - {x: 82.5, y: -88.22423}
+        - {x: 82.5, y: -20.567883}
+        - {x: 73.861305, y: 13.260291}
+        - {x: -13.150411, y: 89.5}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 878
+        y: 188
+        width: 354
+        height: 661
+      alignment: 1
+      pivot: {x: 0, y: 1}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 177, y: 75.239426}
+        - {x: 127.9268, y: 300.7606}
+        - {x: 81.19829, y: 330.5}
+        - {x: 29.63579, y: 330.5}
+        - {x: -36.42866, y: 305.59317}
+        - {x: -176.61421, y: 136.45232}
+        - {x: -176.61421, y: -68.127594}
+        - {x: -96.047806, y: -235.6576}
+        - {x: -38.03999, y: -330.5}
+        - {x: 39.303757, y: -330.5}
+        - {x: 47.360397, y: -321.03345}
+        - {x: 53.80571, y: -285.59442}
+        - {x: 177, y: -39.132015}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1703
+        y: 191
+        width: 439
+        height: 635
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 98.117134, y: 317.5}
+        - {x: 20.773386, y: 290.0682}
+        - {x: -214.48051, y: 3.3341837}
+        - {x: -214.48051, y: -243.12822}
+        - {x: -170.97466, y: -317.22803}
+        - {x: 219.5, y: -317.22803}
+        - {x: 219.5, y: 304.566}
+        - {x: 207.68745, y: 317.5}
+      - - {x: -219.3145, y: -119.09158}
+        - {x: -219.3145, y: -217.35437}
+        - {x: -188.69926, y: -217.35437}
+        - {x: -183.86528, y: -210.9109}
+        - {x: -183.86528, y: -180.30447}
+        - {x: -212.86919, y: -119.09158}
+      - - {x: -219.3145, y: 285.23563}
+        - {x: -219.3145, y: 241.74226}
+        - {x: -211.25786, y: 241.74226}
+        - {x: -211.25786, y: 277.1813}
+        - {x: -217.70317, y: 285.23563}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_20
+      rect:
+        serializedVersion: 2
+        x: 2718
+        y: 167
+        width: 252
+        height: 665
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 91.53512, y: 252.37587}
+        - {x: 31.915981, y: 332.5}
+        - {x: -114.714874, y: 332.5}
+        - {x: -125.99417, y: 205.66078}
+        - {x: -125.99417, y: -250.21413}
+        - {x: 14.191371, y: -332.36826}
+        - {x: 126, y: -332.36826}
+        - {x: 126, y: -5.362587}
+        - {x: 122.15035, y: 67.12636}
+      - - {x: -125.99417, y: -3.7517216}
+        - {x: -125.99417, y: -35.96903}
+        - {x: -121.16019, y: -35.96903}
+        - {x: -114.714874, y: -26.303837}
+        - {x: -114.714874, y: -11.806048}
+        - {x: -121.16019, y: -3.7517216}
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_21
+      rect:
+        serializedVersion: 2
+        x: 2270
+        y: 185
+        width: 456
+        height: 645
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: disk_sprite_sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1339
+        y: 174
+        width: 393
+        height: 667
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

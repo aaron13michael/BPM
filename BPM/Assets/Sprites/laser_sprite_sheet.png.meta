@@ -1,0 +1,385 @@
+fileFormatVersion: 2
+guid: bb2a985900316434a857bcea6a8153ea
+timeCreated: 1509227588
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: laser_sprite_sheet_0
+    21300002: laser_sprite_sheet_1
+    21300004: laser_sprite_sheet_2
+    21300006: laser_sprite_sheet_3
+    21300008: laser_sprite_sheet_4
+    21300010: laser_sprite_sheet_5
+    21300012: laser_sprite_sheet_6
+    21300014: laser_sprite_sheet_7
+    21300016: laser_sprite_sheet_8
+    21300018: laser_sprite_sheet_9
+    21300020: laser_sprite_sheet_10
+    21300022: laser_sprite_sheet_11
+    21300024: laser_sprite_sheet_12
+    21300026: laser_sprite_sheet_13
+    21300028: laser_sprite_sheet_14
+    21300030: laser_sprite_sheet_15
+    21300032: laser_sprite_sheet_16
+    21300034: laser_sprite_sheet_17
+    21300036: laser_sprite_sheet_18
+    21300038: laser_sprite_sheet_19
+  externalObjects: {}
+  serializedVersion: 4
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -1
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 500
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  - buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: laser_sprite_sheet_0
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 2494
+        width: 231
+        height: 605
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_1
+      rect:
+        serializedVersion: 2
+        x: 626
+        y: 2471
+        width: 208
+        height: 625
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_2
+      rect:
+        serializedVersion: 2
+        x: 868
+        y: 2494
+        width: 230
+        height: 605
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_3
+      rect:
+        serializedVersion: 2
+        x: 1109
+        y: 2471
+        width: 214
+        height: 624
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_4
+      rect:
+        serializedVersion: 2
+        x: 1621
+        y: 2440
+        width: 472
+        height: 679
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_5
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 1747
+        width: 193
+        height: 608
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_6
+      rect:
+        serializedVersion: 2
+        x: 619
+        y: 1738
+        width: 282
+        height: 610
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_7
+      rect:
+        serializedVersion: 2
+        x: 908
+        y: 1746
+        width: 193
+        height: 607
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 1751
+        width: 302
+        height: 612
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1853
+        y: 1717
+        width: 380
+        height: 669
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_10
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 987
+        width: 228
+        height: 593
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_11
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 970
+        width: 204
+        height: 624
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_12
+      rect:
+        serializedVersion: 2
+        x: 983
+        y: 993
+        width: 230
+        height: 593
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_13
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 968
+        width: 209
+        height: 622
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_14
+      rect:
+        serializedVersion: 2
+        x: 1766
+        y: 974
+        width: 347
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_15
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 204
+        width: 193
+        height: 609
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_16
+      rect:
+        serializedVersion: 2
+        x: 681
+        y: 203
+        width: 257
+        height: 615
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 202
+        width: 195
+        height: 609
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1207
+        y: 201
+        width: 260
+        height: 609
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: laser_sprite_sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1774
+        y: 183
+        width: 379
+        height: 659
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    outline: []
+    physicsShape: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

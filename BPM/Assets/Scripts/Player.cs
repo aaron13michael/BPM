@@ -46,14 +46,14 @@ public class Player : MonoBehaviour
         {
             position = new Vector3(-3.5f, 3.5f, 0.0f);
             direction = Direction.Right;
-            Class = PlayerClass.Laser;
+            Class = PlayerClass.Sword;
 			//playerAudio.clip = attackSounds[Class];
         }
         else
         {
             position = new Vector3(3.5f, -3.5f, 0.0f);
             direction = Direction.Left;
-            Class = PlayerClass.Sword;
+            Class = PlayerClass.Laser;
 			//playerAudio.clip = attackSounds[Class];
         }
         dead = false;
