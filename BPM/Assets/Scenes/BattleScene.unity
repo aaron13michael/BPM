@@ -279,6 +279,7 @@ MonoBehaviour:
   audio: {fileID: 358434170}
   floorTexture1: {fileID: 2800000, guid: 14eb6eefcf5213848acb4272eb936425, type: 3}
   floorTexture2: {fileID: 2800000, guid: 328d09347b281da4a8de14a83696e949, type: 3}
+  MyFont: {fileID: 12800000, guid: 60e1e841bbe374e41947676a7706ca9e, type: 3}
 --- !u!1 &135775226
 GameObject:
   m_ObjectHideFlags: 0
@@ -1252,7 +1253,7 @@ RectTransform:
   m_GameObject: {fileID: 1131526438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.05464481, y: 0.05464481, z: 0.05464481}
+  m_LocalScale: {x: 0.018484289, y: 0.018484289, z: 0.018484289}
   m_Children:
   - {fileID: 402587881}
   - {fileID: 147714324}

@@ -12,6 +12,7 @@ public class GridManager : MonoBehaviour
     public new GameObject audio;
     public Texture floorTexture1;
     public Texture floorTexture2;
+	public Font MyFont;
     
     // X and Y values of both players' positions on the grid
     private int p1X;
@@ -396,8 +397,16 @@ public class GridManager : MonoBehaviour
     // Draws the buttons and lables that hold information about the scene onto the screen.
     void OnGUI()
     {
-        
+		// Font & Color
+		GUI.skin.font = MyFont;
+		GUI.color = Color.magenta;
+
+		// Actions
         GUI.Label(new Rect((Screen.width / 2.0f) - (Screen.width / 4.0f) - 250.0f, Screen.height / 2.0f, 150.0f, 25.0f), "p1 Action: " + p1Actions[p1Actions.Count - 1]);
         GUI.Label(new Rect((Screen.width / 2.0f) + (Screen.width / 4.0f) + 125.0f, Screen.height / 2.0f, 150.0f, 25.0f), "p2 Action: " + p2Actions[p2Actions.Count - 1]);
+
+		// Score
+		GUI.Label(new Rect((Screen.width / 2.0f) - (Screen.width / 4.0f) - 250.0f, Screen.height / 2.0f - 100.0f, 150.0f, 25.0f), "p1 Score: " + player1.GetComponent<Player>().score.ToString());
+		GUI.Label(new Rect((Screen.width / 2.0f) + (Screen.width / 4.0f) + 125.0f, Screen.height / 2.0f - 100.0f, 150.0f, 25.0f), "p2 Score: " + player2.GetComponent<Player>().score.ToString());
     }
 }
