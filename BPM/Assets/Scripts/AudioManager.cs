@@ -8,6 +8,9 @@ public class AudioManager : MonoBehaviour {
 	public AudioClip[] songs;
     //public float bpm;
 
+    public GameObject leftMetronome;
+    public GameObject rightMetronome;
+
     private float beatsPerSecond;
     private float beatTimer;
 
@@ -35,6 +38,7 @@ public class AudioManager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         TimeBeat();
+        Metronome();
 	}
 
     /// <summary>
@@ -51,6 +55,22 @@ public class AudioManager : MonoBehaviour {
         else
         {
             downbeat = false;
+        }
+    }
+
+    void Metronome()
+    {
+        if (downbeat)
+        {
+            leftMetronome.transform.position = new Vector3(-5.0f, -4.48f, -0.5f);
+            rightMetronome.transform.position = new Vector3(5.0f, -4.48f, -0.5f);
+        }
+        else
+        {
+            float leftPos = -5.0f + 5.0f * (beatTimer / beatsPerSecond);
+            float rightPos = 5.0f - 5.0f * (beatTimer / beatsPerSecond);
+            leftMetronome.transform.position = new Vector3(leftPos, -4.48f, -0.5f);
+            rightMetronome.transform.position = new Vector3(rightPos, -4.48f, -0.5f);
         }
     }
 }

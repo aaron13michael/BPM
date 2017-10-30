@@ -10,6 +10,8 @@ public class GridManager : MonoBehaviour
     public GameObject player2;
     public GameObject p2Arrow;
     public new GameObject audio;
+    public Texture floorTexture1;
+    public Texture floorTexture2;
     
     // X and Y values of both players' positions on the grid
     private int p1X;
@@ -25,6 +27,7 @@ public class GridManager : MonoBehaviour
     // Animators
     private Animator diskAnimator;
     private Animator laserAnimator;
+    private int currentTexture = 1;
 
     // Use this for initialization
     void Start()
@@ -43,6 +46,7 @@ public class GridManager : MonoBehaviour
         laserAnimator = player2.GetComponent<Animator>();
         // Setup game for first round
         ResetRound();
+        gameObject.GetComponent<Renderer>().material.mainTexture = floorTexture1;
     }
 
     // Update is called once per frame
@@ -121,6 +125,7 @@ public class GridManager : MonoBehaviour
         {
             ProcessAttack(player1, player2);
         }
+        p1Arrow.transform.position = new Vector3(-5.0f, 3.0f, -0.5f);
     }
     /// <summary>
     /// Processes both player2's input.
@@ -167,6 +172,7 @@ public class GridManager : MonoBehaviour
         {
             ProcessAttack(player2, player1);
         }
+        p2Arrow.transform.position = new Vector3(5.0f, 3.0f, -0.5f);
     }
 
     /// <summary>
@@ -371,6 +377,16 @@ public class GridManager : MonoBehaviour
                     player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];
                     player2.GetComponent<Player>().queuedAction = Player.Input.Nothing;
                 }
+            }
+            if (currentTexture == 1)
+            {
+                gameObject.GetComponent<Renderer>().material.mainTexture = floorTexture2;
+                currentTexture = 2;
+            }
+            else
+            {
+                gameObject.GetComponent<Renderer>().material.mainTexture = floorTexture1;
+                currentTexture = 1;
             }
         }
         player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
