@@ -91,8 +91,6 @@ public class GridManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W)) // Up
         {
-
-			CheckCollisions();
             player1.GetComponent<Player>().queuedAction = Player.Input.Move;
             player1.GetComponent<Player>().direction = Player.Direction.Up;
             p1Actions.Add(KeyCode.W);
@@ -100,7 +98,6 @@ public class GridManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.S)) // Down
         {
-			CheckCollisions();
             player1.GetComponent<Player>().queuedAction = Player.Input.Move;
             player1.GetComponent<Player>().direction = Player.Direction.Down;
             p1Actions.Add(KeyCode.S);
@@ -108,7 +105,6 @@ public class GridManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.A)) // Left
 		{
-			CheckCollisions();
             player1.GetComponent<Player>().queuedAction = Player.Input.Move;
             player1.GetComponent<Player>().direction = Player.Direction.Left;
             p1Actions.Add(KeyCode.A);
@@ -116,7 +112,6 @@ public class GridManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D)) // Right
         {
-			CheckCollisions();
             player1.GetComponent<Player>().queuedAction = Player.Input.Move;
             player1.GetComponent<Player>().direction = Player.Direction.Right;
             p1Actions.Add(KeyCode.D);
@@ -136,7 +131,6 @@ public class GridManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow)) // Up
         {
-			CheckCollisions();
             player2.GetComponent<Player>().queuedAction = Player.Input.Move;
             player2.GetComponent<Player>().direction = Player.Direction.Up;
             p2Actions.Add(KeyCode.UpArrow);
@@ -145,7 +139,6 @@ public class GridManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.DownArrow)) // Down
         {
-			CheckCollisions();
             player2.GetComponent<Player>().queuedAction = Player.Input.Move;
             player2.GetComponent<Player>().direction = Player.Direction.Down;
             p2Actions.Add(KeyCode.DownArrow);
@@ -154,7 +147,6 @@ public class GridManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow)) // Left
         {
-			CheckCollisions();
             player2.GetComponent<Player>().queuedAction = Player.Input.Move;
             player2.GetComponent<Player>().direction = Player.Direction.Left;
             p2Actions.Add(KeyCode.LeftArrow);
@@ -163,7 +155,6 @@ public class GridManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.RightArrow)) // Right
         {
-			CheckCollisions();
             player2.GetComponent<Player>().queuedAction = Player.Input.Move;
             player2.GetComponent<Player>().direction = Player.Direction.Right;
             p2Actions.Add(KeyCode.RightArrow);
@@ -314,6 +305,9 @@ public class GridManager : MonoBehaviour
         {
             p2Y = 1;
         }
+
+		player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
+		player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];
     }
 
     /// <summary>
@@ -331,21 +325,25 @@ public class GridManager : MonoBehaviour
                     {
                         diskAnimator.SetTrigger("diskWalkUp");
                         p1Y--;
+						CheckCollisions();
                     }
                     else if (player1.GetComponent<Player>().direction == Player.Direction.Down)
                     {
                         diskAnimator.SetTrigger("diskWalkDown");
                         p1Y++;
+						CheckCollisions();
                     }
                     else if (player1.GetComponent<Player>().direction == Player.Direction.Left)
                     {
                         diskAnimator.SetTrigger("diskWalkLeft");
                         p1X--;
+						CheckCollisions();
                     }
                     else if (player1.GetComponent<Player>().direction == Player.Direction.Right)
                     {
                         diskAnimator.SetTrigger("diskWalkRight");
                         p1X++;
+						CheckCollisions();
                     }
                     player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
                     player1.GetComponent<Player>().queuedAction = Player.Input.Nothing;
@@ -359,21 +357,25 @@ public class GridManager : MonoBehaviour
                     {
                         laserAnimator.SetTrigger("laserUpWalk");
                         p2Y--;
+						CheckCollisions();
                     }
                     else if (player2.GetComponent<Player>().direction == Player.Direction.Down)
                     {
                         laserAnimator.SetTrigger("laserDownWalk");
                         p2Y++;
+						CheckCollisions();
                     }
                     else if (player2.GetComponent<Player>().direction == Player.Direction.Left)
                     {
                         laserAnimator.SetTrigger("laserLeftWalk");
                         p2X--;
+						CheckCollisions();
                     }
                     else if (player2.GetComponent<Player>().direction == Player.Direction.Right)
                     {
                         laserAnimator.SetTrigger("laserRightWalk");
                         p2X++;
+						CheckCollisions();
                     }
                     player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];
                     player2.GetComponent<Player>().queuedAction = Player.Input.Nothing;
