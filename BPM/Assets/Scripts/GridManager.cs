@@ -63,10 +63,6 @@ public class GridManager : MonoBehaviour
         if (player1.GetComponent<Player>().dead || player2.GetComponent<Player>().dead)
         {
             ResetRound();
-            // Temporary score board
-            Debug.Log("Current Score: ");
-            Debug.Log("Player 1: " + player1.GetComponent<Player>().score.ToString());
-            Debug.Log("Player 2: " + player2.GetComponent<Player>().score.ToString());
         }
 
 	}
