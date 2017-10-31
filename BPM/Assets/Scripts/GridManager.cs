@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GridManager : MonoBehaviour
 {
@@ -64,6 +65,18 @@ public class GridManager : MonoBehaviour
         {
             ResetRound();
         }
+
+		if (player1.GetComponent<Player> ().score >= 3) 
+		{
+			//PlayerPrefs.SetString ("Winner", "Player 1 Wins"); ---> trying to display which player won (see Start() in UIManager)
+			SceneManager.LoadScene ("GameOver");
+		}
+
+		if (player2.GetComponent<Player> ().score >= 3) 
+		{
+			//PlayerPrefs.SetString ("Winner", "Player 2 Wins"); ---> trying to display which player won see Start() in UIManager)
+			SceneManager.LoadScene ("GameOver");
+		}
 
 	}
 
@@ -581,8 +594,8 @@ public class GridManager : MonoBehaviour
 		GUI.color = Color.magenta;
 
 		// Actions
-        GUI.Label(new Rect((Screen.width / 2.0f) - (Screen.width / 4.0f) - 250.0f, Screen.height / 2.0f, 150.0f, 25.0f), "p1 Action: " + p1Actions[p1Actions.Count - 1]);
-        GUI.Label(new Rect((Screen.width / 2.0f) + (Screen.width / 4.0f) + 125.0f, Screen.height / 2.0f, 150.0f, 25.0f), "p2 Action: " + p2Actions[p2Actions.Count - 1]);
+        //GUI.Label(new Rect((Screen.width / 2.0f) - (Screen.width / 4.0f) - 250.0f, Screen.height / 2.0f, 150.0f, 25.0f), "p1 Action: " + p1Actions[p1Actions.Count - 1]);
+        //GUI.Label(new Rect((Screen.width / 2.0f) + (Screen.width / 4.0f) + 125.0f, Screen.height / 2.0f, 150.0f, 25.0f), "p2 Action: " + p2Actions[p2Actions.Count - 1]);
 
 		// Score
 		GUI.Label(new Rect((Screen.width / 2.0f) - (Screen.width / 4.0f) - 250.0f, Screen.height / 2.0f - 100.0f, 150.0f, 25.0f), "p1 Score: " + player1.GetComponent<Player>().score.ToString());

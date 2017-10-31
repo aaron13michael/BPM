@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // Code from: https://www.sitepoint.com/adding-pause-main-menu-and-game-over-screens-in-unity/
 public class UIManager : MonoBehaviour 
@@ -11,6 +13,7 @@ public class UIManager : MonoBehaviour
     GameObject player1;
     GameObject player2;
 	bool paused; // added by Niko
+	//string winner;  ---> trying to display which player won
 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +25,19 @@ public class UIManager : MonoBehaviour
         player2 = GameObject.FindGameObjectWithTag("Player2");
         hidePaused();
 		paused = false; // added by Niko
+
+		/*
+		 * trying to display which player won
+		if (SceneManager.GetActiveScene().Equals ("GameOver")) 
+		{
+			winner = PlayerPrefs.GetString ("Winner");
+
+			GameObject child = GameObject.Find ("Canvas");
+
+			Text t = child.GetComponent<Text> (); 
+			t.text = winner;
+		}
+		*/
 	}
 
 	// Update is called once per frame
@@ -58,8 +74,10 @@ public class UIManager : MonoBehaviour
 
 
 	//Reloads the Level
-	public void Reload(){
-		Application.LoadLevel(Application.loadedLevel);
+	public void Reload()
+	{
+		Scene scene = SceneManager.GetActiveScene ();
+		SceneManager.LoadScene(scene.name);
 	}
 
 	//controls the pausing of the scene
@@ -113,6 +131,6 @@ public class UIManager : MonoBehaviour
 
 	//loads inputted level
 	public void LoadLevel(string level){
-		Application.LoadLevel(level);
+		SceneManager.LoadScene(level);
 	}
 }
