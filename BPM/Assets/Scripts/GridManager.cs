@@ -598,7 +598,7 @@ public class GridManager : MonoBehaviour
         //GUI.Label(new Rect((Screen.width / 2.0f) + (Screen.width / 4.0f) + 125.0f, Screen.height / 2.0f, 150.0f, 25.0f), "p2 Action: " + p2Actions[p2Actions.Count - 1]);
 
 		// Score
-		GUI.Label(new Rect((Screen.width / 2.0f) - (Screen.width / 4.0f) - 250.0f, Screen.height / 2.0f - 100.0f, 150.0f, 25.0f), "p1 Score: " + player1.GetComponent<Player>().score.ToString());
-		GUI.Label(new Rect((Screen.width / 2.0f) + (Screen.width / 4.0f) + 125.0f, Screen.height / 2.0f - 100.0f, 150.0f, 25.0f), "p2 Score: " + player2.GetComponent<Player>().score.ToString());
+		GUI.Label(new Rect((Screen.width / 2.0f) - (Screen.width / 4.0f) - 250.0f, Screen.height / 2.0f - 285.0f, 150.0f, 25.0f), "p1 Score: " + player1.GetComponent<Player>().score.ToString());
+		GUI.Label(new Rect((Screen.width / 2.0f) + (Screen.width / 4.0f) + 125.0f, Screen.height / 2.0f - 285.0f, 150.0f, 25.0f), "p2 Score: " + player2.GetComponent<Player>().score.ToString());
     }
 }
