@@ -91,6 +91,7 @@ public class GridManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W)) // Up
         {
+            diskAnimator.SetTrigger("diskWalkUp");
             player1.GetComponent<Player>().queuedAction = Player.Input.Move;
             player1.GetComponent<Player>().direction = Player.Direction.Up;
             p1Actions.Add(KeyCode.W);
@@ -98,6 +99,7 @@ public class GridManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.S)) // Down
         {
+            diskAnimator.SetTrigger("diskWalkDown");
             player1.GetComponent<Player>().queuedAction = Player.Input.Move;
             player1.GetComponent<Player>().direction = Player.Direction.Down;
             p1Actions.Add(KeyCode.S);
@@ -105,6 +107,7 @@ public class GridManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.A)) // Left
 		{
+            diskAnimator.SetTrigger("diskWalkLeft");
             player1.GetComponent<Player>().queuedAction = Player.Input.Move;
             player1.GetComponent<Player>().direction = Player.Direction.Left;
             p1Actions.Add(KeyCode.A);
@@ -112,6 +115,7 @@ public class GridManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.D)) // Right
         {
+            diskAnimator.SetTrigger("diskWalkRight");
             player1.GetComponent<Player>().queuedAction = Player.Input.Move;
             player1.GetComponent<Player>().direction = Player.Direction.Right;
             p1Actions.Add(KeyCode.D);
@@ -131,6 +135,7 @@ public class GridManager : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow)) // Up
         {
+            laserAnimator.SetTrigger("laserUpWalk");
             player2.GetComponent<Player>().queuedAction = Player.Input.Move;
             player2.GetComponent<Player>().direction = Player.Direction.Up;
             p2Actions.Add(KeyCode.UpArrow);
@@ -139,6 +144,7 @@ public class GridManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.DownArrow)) // Down
         {
+            laserAnimator.SetTrigger("laserDownWalk");
             player2.GetComponent<Player>().queuedAction = Player.Input.Move;
             player2.GetComponent<Player>().direction = Player.Direction.Down;
             p2Actions.Add(KeyCode.DownArrow);
@@ -147,6 +153,7 @@ public class GridManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftArrow)) // Left
         {
+            laserAnimator.SetTrigger("laserLeftWalk");
             player2.GetComponent<Player>().queuedAction = Player.Input.Move;
             player2.GetComponent<Player>().direction = Player.Direction.Left;
             p2Actions.Add(KeyCode.LeftArrow);
@@ -155,6 +162,7 @@ public class GridManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.RightArrow)) // Right
         {
+            laserAnimator.SetTrigger("laserRightWalk");
             player2.GetComponent<Player>().queuedAction = Player.Input.Move;
             player2.GetComponent<Player>().direction = Player.Direction.Right;
             p2Actions.Add(KeyCode.RightArrow);
@@ -215,7 +223,7 @@ public class GridManager : MonoBehaviour
         p1Actions.Add(KeyCode.D);
         p2Actions.Add(KeyCode.RightArrow);
 
-        diskAnimator.SetTrigger("diskRightWalk");
+        diskAnimator.SetTrigger("diskWalkRight");
         laserAnimator.SetTrigger("laserLeftWalk");
     }
 
@@ -473,28 +481,28 @@ public class GridManager : MonoBehaviour
                 {
                     if (player1.GetComponent<Player>().direction == Player.Direction.Up)
                     {
-						diskAnimator.SetTrigger("diskWalkUp");
+						//diskAnimator.SetTrigger("diskWalkUp");
 						prevP1Y = p1Y;
 						p1Y--;
 						CheckCollisions();
                     }
                     else if (player1.GetComponent<Player>().direction == Player.Direction.Down)
                     {
-						diskAnimator.SetTrigger("diskWalkDown");
+						//diskAnimator.SetTrigger("diskWalkDown");
 						prevP1Y = p1Y;
 						p1Y++;
 						CheckCollisions();
                     }
                     else if (player1.GetComponent<Player>().direction == Player.Direction.Left)
                     {
-						diskAnimator.SetTrigger("diskWalkLeft");
+						//diskAnimator.SetTrigger("diskWalkLeft");
 						prevP1X = p1X;
 						p1X--;
 						CheckCollisions();
                     }
                     else if (player1.GetComponent<Player>().direction == Player.Direction.Right)
                     {
-						diskAnimator.SetTrigger("diskWalkRight");
+						//diskAnimator.SetTrigger("diskWalkRight");
 						prevP1X = p1X;
 						p1X++;
 						CheckCollisions();
