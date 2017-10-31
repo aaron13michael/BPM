@@ -7,6 +7,7 @@ public class UIManager : MonoBehaviour
 {
 	GameObject[] pauseObjects;
 	GameObject quad; // added by Niko
+    public GameObject[] toHide;
 	bool paused; // added by Niko
 
 	// Use this for initialization
@@ -81,6 +82,10 @@ public class UIManager : MonoBehaviour
 		foreach(GameObject g in pauseObjects){
 			g.SetActive(true);
 		}
+        foreach(GameObject g in toHide)
+        {
+            g.SetActive(false);
+        }
 	}
 
 	//hides objects with ShowOnPause tag
@@ -88,7 +93,11 @@ public class UIManager : MonoBehaviour
 		foreach(GameObject g in pauseObjects){
 			g.SetActive(false);
 		}
-	}
+        foreach (GameObject g in toHide)
+        {
+            g.SetActive(true);
+        }
+    }
 
 	//loads inputted level
 	public void LoadLevel(string level){
