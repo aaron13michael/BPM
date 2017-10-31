@@ -119,7 +119,7 @@ public class GridManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.LeftShift)) //Space Bar -> attack button
         {
-            ProcessAttack(player1, player2);
+			player1.GetComponent<Player>().queuedAction = Player.Input.Attack;
         }
         p1Arrow.transform.position = new Vector3(-5.0f, 3.0f, -0.5f);
     }
@@ -162,7 +162,7 @@ public class GridManager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.RightShift))
         {
-            ProcessAttack(player2, player1);
+			player2.GetComponent<Player>().queuedAction = Player.Input.Attack;
         }
         p2Arrow.transform.position = new Vector3(5.0f, 3.0f, -0.5f);
     }
@@ -346,9 +346,15 @@ public class GridManager : MonoBehaviour
 						CheckCollisions();
                     }
                     player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
-                    player1.GetComponent<Player>().queuedAction = Player.Input.Nothing;
                 }
+				else if (player1.GetComponent<Player>().queuedAction == Player.Input.Attack)
+				{
+					ProcessAttack(player1, player2);
+				}
+
+				player1.GetComponent<Player>().queuedAction = Player.Input.Nothing;
             }
+
             if (player2.GetComponent<Player>().queuedAction != Player.Input.Nothing)
             {
                 if (player2.GetComponent<Player>().queuedAction == Player.Input.Move)
@@ -378,9 +384,14 @@ public class GridManager : MonoBehaviour
 						CheckCollisions();
                     }
                     player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];
-                    player2.GetComponent<Player>().queuedAction = Player.Input.Nothing;
                 }
+				else if (player2.GetComponent<Player>().queuedAction == Player.Input.Attack)
+				{
+					ProcessAttack(player2, player1);
+				}
+				player2.GetComponent<Player>().queuedAction = Player.Input.Nothing;
             }
+
             if (currentTexture == 1)
             {
                 gameObject.GetComponent<Renderer>().material.mainTexture = floorTexture2;
