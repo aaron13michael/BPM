@@ -501,7 +501,7 @@ GameObject:
   - component: {fileID: 326005814}
   m_Layer: 0
   m_Name: x_Arrow
-  m_TagString: Untagged
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -961,7 +961,7 @@ GameObject:
   - component: {fileID: 594427048}
   m_Layer: 0
   m_Name: centerMetronome
-  m_TagString: Untagged
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1253,7 +1253,7 @@ RectTransform:
   m_GameObject: {fileID: 1131526438}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.018484289, y: 0.018484289, z: 0.018484289}
+  m_LocalScale: {x: 0.035971224, y: 0.035971224, z: 0.035971224}
   m_Children:
   - {fileID: 402587881}
   - {fileID: 147714324}
@@ -1280,7 +1280,7 @@ GameObject:
   - component: {fileID: 1322168712}
   m_Layer: 0
   m_Name: rightMetronome
-  m_TagString: Untagged
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1556,7 +1556,7 @@ GameObject:
   - component: {fileID: 1726130796}
   m_Layer: 0
   m_Name: circle_Arrow
-  m_TagString: Untagged
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1905,7 +1905,7 @@ GameObject:
   - component: {fileID: 1899909483}
   m_Layer: 0
   m_Name: leftMetronome
-  m_TagString: Untagged
+  m_TagString: HideOnPause
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

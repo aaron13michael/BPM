@@ -7,7 +7,9 @@ public class UIManager : MonoBehaviour
 {
 	GameObject[] pauseObjects;
 	GameObject quad; // added by Niko
-    public GameObject[] toHide;
+    GameObject[] toHide;
+    GameObject player1;
+    GameObject player2;
 	bool paused; // added by Niko
 
 	// Use this for initialization
@@ -15,7 +17,10 @@ public class UIManager : MonoBehaviour
 		Time.timeScale = 1;
 		pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");
 		quad = GameObject.FindGameObjectWithTag ("Map"); // added by Niko
-		hidePaused();
+        toHide = GameObject.FindGameObjectsWithTag("HideOnPause");
+        player1 = GameObject.FindGameObjectWithTag("Player1");
+        player2 = GameObject.FindGameObjectWithTag("Player2");
+        hidePaused();
 		paused = false; // added by Niko
 	}
 
@@ -86,6 +91,8 @@ public class UIManager : MonoBehaviour
         {
             g.SetActive(false);
         }
+        player1.SetActive(false);
+        player2.SetActive(false);
 	}
 
 	//hides objects with ShowOnPause tag
@@ -96,6 +103,11 @@ public class UIManager : MonoBehaviour
         foreach (GameObject g in toHide)
         {
             g.SetActive(true);
+        }
+        if (player1 != null && player2 != null)
+        {
+            player1.SetActive(true);
+            player2.SetActive(true);
         }
     }
 
