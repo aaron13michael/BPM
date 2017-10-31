@@ -66,12 +66,6 @@ public class Player : MonoBehaviour
         transform.position = position;
         if (dead) this.gameObject.GetComponent<SpriteRenderer>().enabled = false;
     }
-    protected void RemoveAttackBlocks()
-    {
-        foreach (GameObject g in attackSquares)
-        {
-        }
-    }
 
     protected void showAttack(Vector3[] attackedBlocks)
     {
