@@ -488,88 +488,86 @@ public class GridManager : MonoBehaviour
     {
         if (audio.GetComponent<AudioManager>().downbeat)
         {
-            if (player1.GetComponent<Player>().queuedAction != Player.Input.Nothing)
+            if (player1.GetComponent<Player>().queuedAction == Player.Input.Move)
             {
-                if (player1.GetComponent<Player>().queuedAction == Player.Input.Move)
+                if (player1.GetComponent<Player>().direction == Player.Direction.Up)
                 {
-                    if (player1.GetComponent<Player>().direction == Player.Direction.Up)
-                    {
-						//diskAnimator.SetTrigger("diskWalkUp");
-						prevP1Y = p1Y;
-						p1Y--;
-						CheckCollisions();
-                    }
-                    else if (player1.GetComponent<Player>().direction == Player.Direction.Down)
-                    {
-						//diskAnimator.SetTrigger("diskWalkDown");
-						prevP1Y = p1Y;
-						p1Y++;
-						CheckCollisions();
-                    }
-                    else if (player1.GetComponent<Player>().direction == Player.Direction.Left)
-                    {
-						//diskAnimator.SetTrigger("diskWalkLeft");
-						prevP1X = p1X;
-						p1X--;
-						CheckCollisions();
-                    }
-                    else if (player1.GetComponent<Player>().direction == Player.Direction.Right)
-                    {
-						//diskAnimator.SetTrigger("diskWalkRight");
-						prevP1X = p1X;
-						p1X++;
-						CheckCollisions();
-                    }
-                    player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
+					//diskAnimator.SetTrigger("diskWalkUp");
+					prevP1Y = p1Y;
+					p1Y--;
+					CheckCollisions();
                 }
-				else if (player1.GetComponent<Player>().queuedAction == Player.Input.Attack)
-				{
-					ProcessAttack(player1, player2);
-				}
-
-				player1.GetComponent<Player>().queuedAction = Player.Input.Nothing;
+                else if (player1.GetComponent<Player>().direction == Player.Direction.Down)
+                {
+					//diskAnimator.SetTrigger("diskWalkDown");
+					prevP1Y = p1Y;
+					p1Y++;
+					CheckCollisions();
+                }
+                else if (player1.GetComponent<Player>().direction == Player.Direction.Left)
+                {
+					//diskAnimator.SetTrigger("diskWalkLeft");
+					prevP1X = p1X;
+					p1X--;
+					CheckCollisions();
+                }
+                else if (player1.GetComponent<Player>().direction == Player.Direction.Right)
+                {
+					//diskAnimator.SetTrigger("diskWalkRight");
+					prevP1X = p1X;
+					p1X++;
+					CheckCollisions();
+                }
+                player1.GetComponent<Player>().position = gridSpace[p1Y, p1X];
             }
 
-            if (player2.GetComponent<Player>().queuedAction != Player.Input.Nothing)
+            if (player2.GetComponent<Player>().queuedAction == Player.Input.Move)
             {
-                if (player2.GetComponent<Player>().queuedAction == Player.Input.Move)
-                {
-					if (player2.GetComponent<Player>().direction == Player.Direction.Up)
-					{
-						laserAnimator.SetTrigger("laserUpWalk");
-						prevP2Y = p2Y;
-						p2Y--;
-						CheckCollisions();
-					}
-					else if (player2.GetComponent<Player>().direction == Player.Direction.Down)
-					{
-						laserAnimator.SetTrigger("laserDownWalk");
-						prevP2Y = p2Y;
-						p2Y++;
-						CheckCollisions();
-					}
-					else if (player2.GetComponent<Player>().direction == Player.Direction.Left)
-					{
-						laserAnimator.SetTrigger("laserLeftWalk");
-						prevP2X = p2X;
-						p2X--;
-						CheckCollisions();
-					}
-					else if (player2.GetComponent<Player>().direction == Player.Direction.Right)
-					{
-						laserAnimator.SetTrigger("laserRightWalk");
-						prevP2X = p2X;
-						p2X++;
-						CheckCollisions();
-					}
-                    player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];
-                }
-				else if (player2.GetComponent<Player>().queuedAction == Player.Input.Attack)
+				if (player2.GetComponent<Player>().direction == Player.Direction.Up)
 				{
-					ProcessAttack(player2, player1);
+					laserAnimator.SetTrigger("laserUpWalk");
+					prevP2Y = p2Y;
+					p2Y--;
+					CheckCollisions();
 				}
-				player2.GetComponent<Player>().queuedAction = Player.Input.Nothing;
+				else if (player2.GetComponent<Player>().direction == Player.Direction.Down)
+				{
+					laserAnimator.SetTrigger("laserDownWalk");
+					prevP2Y = p2Y;
+					p2Y++;
+					CheckCollisions();
+				}
+				else if (player2.GetComponent<Player>().direction == Player.Direction.Left)
+				{
+					laserAnimator.SetTrigger("laserLeftWalk");
+					prevP2X = p2X;
+					p2X--;
+					CheckCollisions();
+				}
+				else if (player2.GetComponent<Player>().direction == Player.Direction.Right)
+				{
+					laserAnimator.SetTrigger("laserRightWalk");
+					prevP2X = p2X;
+					p2X++;
+					CheckCollisions();
+				}
+                player2.GetComponent<Player>().position = gridSpace[p2Y, p2X];
             }
+
+			//Check attacks after movement is complete
+			if (player1.GetComponent<Player>().queuedAction == Player.Input.Attack)
+			{
+				ProcessAttack(player1, player2);
+			}
+
+			if (player2.GetComponent<Player>().queuedAction == Player.Input.Attack)
+			{
+				ProcessAttack(player2, player1);
+			}
+
+			player1.GetComponent<Player>().queuedAction = Player.Input.Nothing;
+			player2.GetComponent<Player>().queuedAction = Player.Input.Nothing;
+
 
             if (currentTexture == 1)
             {
