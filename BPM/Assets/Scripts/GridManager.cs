@@ -68,13 +68,13 @@ public class GridManager : MonoBehaviour
 
 		if (player1.GetComponent<Player> ().score >= 3) 
 		{
-			//PlayerPrefs.SetString ("Winner", "Player 1 Wins"); ---> trying to display which player won (see Start() in UIManager)
+			PlayerPrefs.SetString ("Winner", "Player  1  Wins"); // display which player won (see Start() in UIManager)
 			SceneManager.LoadScene ("GameOver");
 		}
 
 		if (player2.GetComponent<Player> ().score >= 3) 
 		{
-			//PlayerPrefs.SetString ("Winner", "Player 2 Wins"); ---> trying to display which player won see Start() in UIManager)
+			PlayerPrefs.SetString ("Winner", "Player  2  Wins"); // display which player won see Start() in UIManager)
 			SceneManager.LoadScene ("GameOver");
 		}
 
@@ -587,16 +587,19 @@ public class GridManager : MonoBehaviour
     // Draws the buttons and lables that hold information about the scene onto the screen.
     void OnGUI()
     {
-		// Font & Color
+		// Font, Size & Color
 		GUI.skin.font = MyFont;
-		GUI.color = Color.magenta;
+
+		GUIStyle style = new GUIStyle ();
+		style.fontSize = 45;
+		style.normal.textColor = Color.magenta;
 
 		// Actions
         //GUI.Label(new Rect((Screen.width / 2.0f) - (Screen.width / 4.0f) - 250.0f, Screen.height / 2.0f, 150.0f, 25.0f), "p1 Action: " + p1Actions[p1Actions.Count - 1]);
         //GUI.Label(new Rect((Screen.width / 2.0f) + (Screen.width / 4.0f) + 125.0f, Screen.height / 2.0f, 150.0f, 25.0f), "p2 Action: " + p2Actions[p2Actions.Count - 1]);
 
 		// Score
-		GUI.Label(new Rect((Screen.width / 2.0f) - (Screen.width / 4.0f) - 250.0f, Screen.height / 2.0f - 285.0f, 150.0f, 25.0f), "p1 Score: " + player1.GetComponent<Player>().score.ToString());
-		GUI.Label(new Rect((Screen.width / 2.0f) + (Screen.width / 4.0f) + 125.0f, Screen.height / 2.0f - 285.0f, 150.0f, 25.0f), "p2 Score: " + player2.GetComponent<Player>().score.ToString());
+		GUI.Label(new Rect((Screen.width / 2.0f) - (Screen.width / 4.0f) - 275.0f, Screen.height / 2.0f - 285.0f, 150.0f, 25.0f), "p1 Score: " + player1.GetComponent<Player>().score.ToString(), style);
+		GUI.Label(new Rect((Screen.width / 2.0f) + (Screen.width / 4.0f) + 25.0f, Screen.height / 2.0f - 285.0f, 150.0f, 25.0f), "p2 Score: " + player2.GetComponent<Player>().score.ToString(), style);
     }
 }

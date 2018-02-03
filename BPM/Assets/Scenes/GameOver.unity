@@ -284,7 +284,7 @@ RectTransform:
   m_GameObject: {fileID: 211516925}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.016891891, y: 0.016891891, z: 0.016891891}
+  m_LocalScale: {x: 0.017211704, y: 0.017211704, z: 0.017211704}
   m_Children:
   - {fileID: 277085095}
   - {fileID: 2138254454}
@@ -370,7 +370,7 @@ GameObject:
   - component: {fileID: 277085097}
   - component: {fileID: 277085096}
   m_Layer: 5
-  m_Name: Text
+  m_Name: WinnerText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -429,7 +429,7 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 12800000, guid: 60e1e841bbe374e41947676a7706ca9e, type: 3}
-    m_FontSize: 180
+    m_FontSize: 135
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0

@@ -4,19 +4,19 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-// Code from: https://www.sitepoint.com/adding-pause-main-menu-and-game-over-screens-in-unity/
+// Starting Code from: https://www.sitepoint.com/adding-pause-main-menu-and-game-over-screens-in-unity/
 public class UIManager : MonoBehaviour 
 {
 	GameObject[] pauseObjects;
-	GameObject quad; // added by Niko
+	GameObject quad; 
     GameObject[] toHide;
     GameObject player1;
     GameObject player2;
-	bool paused; // added by Niko
-	//string winner;  ---> trying to display which player won
+	bool paused; 
 
 	// Use this for initialization
-	void Start () {
+	void Start () 
+	{
 		Time.timeScale = 1;
 		pauseObjects = GameObject.FindGameObjectsWithTag("ShowOnPause");
 		quad = GameObject.FindGameObjectWithTag ("Map"); // added by Niko
@@ -24,27 +24,23 @@ public class UIManager : MonoBehaviour
         player1 = GameObject.FindGameObjectWithTag("Player1");
         player2 = GameObject.FindGameObjectWithTag("Player2");
         hidePaused();
-		paused = false; // added by Niko
+		paused = false; 
 
-		/*
-		 * trying to display which player won
-		if (SceneManager.GetActiveScene().Equals ("GameOver")) 
+		// Display which player won 
+		if (SceneManager.GetActiveScene().name == "GameOver") 
 		{
-			winner = PlayerPrefs.GetString ("Winner");
-
-			GameObject child = GameObject.Find ("Canvas");
-
-			Text t = child.GetComponent<Text> (); 
+			string winner = PlayerPrefs.GetString ("Winner");
+			Text t = GameObject.Find ("WinnerText").transform.GetComponent<Text>(); 
 			t.text = winner;
 		}
-		*/
+
 	}
 
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+	{
 
 		//uses the p button to pause and unpause the game
-		// added by Niko
 		if (Input.GetKeyDown (KeyCode.P)) {
 			if (!paused) {
 				quad.SetActive (false);
@@ -56,7 +52,6 @@ public class UIManager : MonoBehaviour
 				paused = false;
 			}
 		}
-
 
 			/*
 			 * Original Code
@@ -71,7 +66,6 @@ public class UIManager : MonoBehaviour
 			}
 			*/
 	}
-
 
 	//Reloads the Level
 	public void Reload()
